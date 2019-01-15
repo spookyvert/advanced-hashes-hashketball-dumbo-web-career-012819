@@ -164,28 +164,28 @@ def player_numbers(team)
   end.compact.shift
 end
 
-def player_stats(players_name)
+def player_stats(player)
   game_hash.collect do |key, value|
-    value[:players].select do |name, stats|
-      if name == players_name
-        return stats
+    value[:players].select do |key, value|
+      if name == player
+        return value
       end
     end
   end
 end
 
 def big_shoe_rebounds 
-  biggest_shoe = 0
-  rebounds = 0 
+  big = 0
+  r = 0 
   game_hash.collect do |key, value|
-    value[:players].select do |name, stats|
-      if stats[:shoe] > biggest_shoe
-        biggest_shoe = stats[:shoe] 
-        rebounds = stats[:rebounds] 
+    value[:players].select do |key, value|
+      if value[:shoe] > big
+        big = value[:shoe] 
+        r = value[:rebounds] 
       end
     end
   end
-  rebounds
+  r
 end
 
 
