@@ -120,6 +120,7 @@ end
 
 # conditional to see if it is the same as the argument
 def num_points_scored(player)
+  binding.pry
   game_hash.map do |key, value|
     value[:players].select do |key, value|
       if key == player
