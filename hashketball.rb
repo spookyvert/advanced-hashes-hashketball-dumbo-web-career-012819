@@ -164,17 +164,26 @@ def player_numbers(team)
   end.compact.shift
 end
 
+<<<<<<< HEAD
 def player_stats(player)
   game_hash.collect do |key, value|
     value[:players].select do |key, value|
       if name == player
         return value
+=======
+def player_stats(players_name)
+  game_hash.collect do |key, value|
+    value[:players].select do |name, stats|
+      if name == players_name
+        return stats
+>>>>>>> 4c3a44d3443dc1316ea5fa3a889e08fa74f37d85
       end
     end
   end
 end
 
 def big_shoe_rebounds 
+<<<<<<< HEAD
   big = 0
   r = 0 
   game_hash.collect do |key, value|
@@ -186,6 +195,19 @@ def big_shoe_rebounds
     end
   end
   r
+=======
+  biggest_shoe = 0
+  rebounds = 0 
+  game_hash.collect do |key, value|
+    value[:players].select do |name, stats|
+      if stats[:shoe] > biggest_shoe
+        biggest_shoe = stats[:shoe] 
+        rebounds = stats[:rebounds] 
+      end
+    end
+  end
+  rebounds
+>>>>>>> 4c3a44d3443dc1316ea5fa3a889e08fa74f37d85
 end
 
 
