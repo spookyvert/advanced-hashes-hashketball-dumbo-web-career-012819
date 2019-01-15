@@ -164,19 +164,16 @@ def player_numbers(team)
   end.compact.shift
 end
 
-<<<<<<< HEAD
 def player_stats(player)
   game_hash.collect do |key, value|
     value[:players].select do |key, value|
       if name == player
         return value
-=======
 def player_stats(players_name)
   game_hash.collect do |key, value|
     value[:players].select do |name, stats|
       if name == players_name
         return stats
->>>>>>> 4c3a44d3443dc1316ea5fa3a889e08fa74f37d85
       end
     end
   end
