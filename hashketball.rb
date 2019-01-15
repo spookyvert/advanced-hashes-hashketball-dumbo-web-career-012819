@@ -123,7 +123,7 @@ def num_points_scored(player)
   
   game_hash.map do |key, value|
     binding.pry
-    value[:players].select do |key, value|
+    value[:players].find do |key, value|
       if key == player
         return value[:points]
       end
